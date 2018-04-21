@@ -15,7 +15,7 @@ class Game {
   private:
     void create();
     void destroy();
-    void update();
+    void update(sf::Time const& deltaTime);
     void render();
 
     sf::RenderWindow window;

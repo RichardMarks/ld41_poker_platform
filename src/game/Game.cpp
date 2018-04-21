@@ -5,6 +5,7 @@ Game::Game() {
   pausedFromFocusChange = false;
   window.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), WINDOW_TITLE);
   create();
+  sf::Clock sfClock;
   while (window.isOpen()) {
     sf::Event sfEvent;
     while (window.pollEvent(sfEvent)) {
@@ -26,7 +27,8 @@ Game::Game() {
       }
     }
     if (!paused) {
-      update();
+      sf::Time deltaTime = sfClock.restart();
+      update(deltaTime);
     }
     render();
   }
@@ -45,7 +47,7 @@ void Game::destroy() {
 
 }
 
-void Game::update() {
+void Game::update(sf::Time const& deltaTime) {
 
 }
 

@@ -3,9 +3,9 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-#define SCREEN_WIDTH 960
-#define SCREEN_HEIGHT 720
-#define WINDOW_TITLE "SFML Game Development Starter"
+#define SCREEN_WIDTH 1920 / 2
+#define SCREEN_HEIGHT 1080 / 2
+#define WINDOW_TITLE "LD41 #LDJAM - Jump 'N Poker"
 
 class Game {
   public:

@@ -1,6 +1,8 @@
 #include "Game.hpp"
+#include "lib/SpriteData.hpp"
 
-Game::Game() {
+Game::Game()
+  : playerSpriteAnimator(playerSprite) {
   paused = false;
   pausedFromFocusChange = false;
   window.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), WINDOW_TITLE);
@@ -41,6 +43,29 @@ Game::~Game() {
 void Game::create() {
   mainView.reset(sf::FloatRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT));
   window.setView(mainView);
+
+  auto& idleAnimation = playerSpriteAnimator.createAnimation(
+    "idle", "resources/player.png", sf::seconds(0.5), true);
+  SpriteData playerSpriteData("resources/player.txt");
+
+  std::vector<std::string> framesRequested;
+  // framesRequested.push_back("alienGreen_front.png");
+  // framesRequested.push_back("alienGreen_jump.png");
+  // framesRequested.push_back("alienGreen_stand.png");
+  framesRequested.push_back("alienGreen_walk1.png");
+  framesRequested.push_back("alienGreen_walk2.png");
+
+  std::vector<sf::IntRect> frames = playerSpriteData.frames(framesRequested);
+
+  for (auto it = frames.begin(); it != frames.end(); ++it) {
+    sf::IntRect& frame = *it;
+    idleAnimation.addFrame(frame);
+  }
+
+  const sf::IntRect& rc = playerSprite.getTextureRect();
+  playerSprite.setOrigin(0.5f * rc.width, 0.5f * rc.height);
+  playerSprite.setScale(0.5f, 0.5f);
+  playerSprite.setPosition(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 }
 
 void Game::destroy() {
@@ -48,10 +73,11 @@ void Game::destroy() {
 }
 
 void Game::update(sf::Time const& deltaTime) {
-
+  playerSpriteAnimator.update(deltaTime);
 }
 
 void Game::render() {
   window.clear();
+  window.draw(playerSprite);
   window.display();
 }

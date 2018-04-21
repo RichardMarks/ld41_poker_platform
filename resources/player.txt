@@ -1,0 +1,5 @@
+alienGreen_front.png, 1, 621, 107, 151, 10, 105, 11, 0
+alienGreen_jump.png, 1, 160, 110, 154, 9, 102, 9, 0
+alienGreen_stand.png, 1, 471, 109, 148, 10, 108, 9, 0
+alienGreen_walk1.png, 1, 316, 110, 153, 9, 103, 9, 0
+alienGreen_walk2.png, 1, 1, 114, 157, 7, 99, 7, 0

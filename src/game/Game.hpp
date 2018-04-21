@@ -3,9 +3,11 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+#include "lib/SpriteAnimator.hpp"
+
 #define SCREEN_WIDTH 1920 / 2
 #define SCREEN_HEIGHT 1080 / 2
-#define WINDOW_TITLE "LD41 #LDJAM - Jump 'N Poker"
+#define WINDOW_TITLE "LD41 #LDJAM - Poker Platform"
 
 class Game {
   public:
@@ -24,6 +26,9 @@ class Game {
     bool paused;
     bool pausedFromFocusChange;
     bool pausedStatusBeforeFocusChange;
+
+    sf::Sprite playerSprite;
+    SpriteAnimator playerSpriteAnimator;
 };
 
 #endif // !GAME_H

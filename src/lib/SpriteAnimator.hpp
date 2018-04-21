@@ -31,6 +31,10 @@ class SpriteAnimator {
           current.x += frameSize.x;
         }
       }
+
+      void addFrame(sf::IntRect& frame) {
+        frames.push_back(frame);
+      }
     };
 
     SpriteAnimator(sf::Sprite& sprite);

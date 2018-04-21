@@ -66,6 +66,21 @@ void Game::create() {
   playerSprite.setOrigin(0.5f * rc.width, 0.5f * rc.height);
   playerSprite.setScale(0.5f, 0.5f);
   playerSprite.setPosition(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+
+  const int level[] = {
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 1, 0, 1, 0, 1, 1, 1, 0, 0,
+    0, 1, 0, 1, 0, 0, 1, 0, 0, 0,
+    0, 1, 1, 1, 0, 0, 1, 0, 0, 0,
+    0, 1, 0, 1, 0, 0, 1, 0, 0, 0,
+    0, 1, 0, 1, 0, 1, 1, 1, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  };
+  tileMap.load("resources/tiles.png", sf::Vector2u(128, 128), level, 10, 10);
+  tileMap.setScale(0.25f, 0.25f);
 }
 
 void Game::destroy() {
@@ -78,6 +93,7 @@ void Game::update(sf::Time const& deltaTime) {
 
 void Game::render() {
   window.clear();
+  window.draw(tileMap);
   window.draw(playerSprite);
   window.display();
 }

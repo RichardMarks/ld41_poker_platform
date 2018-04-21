@@ -4,6 +4,7 @@
 #include <SFML/Audio.hpp>
 
 #include "lib/SpriteAnimator.hpp"
+#include "lib/TileMap.hpp"
 
 #define SCREEN_WIDTH 1920 / 2
 #define SCREEN_HEIGHT 1080 / 2
@@ -29,6 +30,8 @@ class Game {
 
     sf::Sprite playerSprite;
     SpriteAnimator playerSpriteAnimator;
+
+    TileMap tileMap;
 };
 
 #endif // !GAME_H

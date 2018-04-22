@@ -1,14 +1,11 @@
-#ifndef PLATFORMER_SCENE
-#define PLATFORMER_SCENE
-#include <vector>
+#ifndef OPTIONS_SCENE
+#define OPTIONS_SCENE
 
 #include "SceneInterface.hpp"
 
-#include "lib/TileMap.hpp"
-
-class PlatformerScene : public SceneInterface {
+class OptionsScene : public SceneInterface {
   public:
-    PlatformerScene(Game* game)
+    OptionsScene(Game* game)
       : SceneInterface(game) {}
     virtual void create();
     virtual void destroy();
@@ -18,8 +15,6 @@ class PlatformerScene : public SceneInterface {
     virtual void render();
 
   protected:
-    TileMap tileMap;
-    std::vector<sf::View> viewList;
 };
 
-#endif // !PLATFORMER_SCENE
+#endif // !OPTIONS_SCENE

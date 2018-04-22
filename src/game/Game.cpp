@@ -128,6 +128,6 @@ void Game::render() {
   // window.display();
 }
 
-void Game::changeScene(SceneInterface* nextScene) {
-  nextScene = nextScene;
+void Game::changeScene(SceneInterface* next) {
+  nextScene = next;
 }

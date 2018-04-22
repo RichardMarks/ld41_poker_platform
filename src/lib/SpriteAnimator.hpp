@@ -1,4 +1,5 @@
 #ifndef SPRITE_ANIMATOR_H
+#define SPRITE_ANIMATOR_H
 
 #include <list>
 #include <vector>

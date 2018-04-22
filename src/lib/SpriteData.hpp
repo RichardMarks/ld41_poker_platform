@@ -1,4 +1,5 @@
 #ifndef SPRITE_DATA_H
+#define SPRITE_DATA_H
 
 #include <vector>
 #include <string>

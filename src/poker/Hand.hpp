@@ -1,4 +1,5 @@
 #ifndef HAND_H
+#define HAND_H
 
 #include <iostream>
 #include "Deck.hpp"
